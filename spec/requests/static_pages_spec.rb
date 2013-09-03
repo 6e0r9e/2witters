@@ -8,7 +8,7 @@ describe "Static Pages" do
     end
     it "Should have the right title" do
       visit '/static_pages/home'
-      expect(page).to have_title("2witters App | Home")
+      expect(page).to have_title("Home")
     end
   end
 
