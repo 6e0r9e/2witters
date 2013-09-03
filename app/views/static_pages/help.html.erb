@@ -1,2 +1,10 @@
-<h1>Help page</h1>
-<p>Find me in app/views/static_pages/help.html.erb</p>
+<% provide(:title, "Help") %>
+<!DOCTYPE html>
+<head>
+  <title>2witters App | <%= yield(:title) %></title>
+</head>
+ <body>
+  <h1>Help page</h1>
+  <p>Find me in app/views/static_pages/help.html.erb</p>
+ </body>
+</html>
