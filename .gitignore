@@ -11,6 +11,19 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore the default PostgreSQL database.
+/db/*.yml
+
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+bundler_stubs/
