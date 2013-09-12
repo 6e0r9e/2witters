@@ -3,15 +3,23 @@ require 'spec_helper'
 describe "User Pages" do
  subject {page}
 
+ shared_examples_for "All user pages" do
+   it { should have_selector('h1', text: heading) }
+   it { should have_title(full_title(page_title)) }
+ end
+
  describe "Signup page" do
   before { visit signup_path}
-  it { should have_selector('h1', text: 'Sign up')}
-  it { should have_title(full_title('Sign up'))}
+  let(:heading) {'Sign up'}
+  let(:page_title) {'Sign up'}
+  it_should_behave_like "All user pages"
+
  end
 
  describe "Sign in" do
    before { visit signin_path }
-   it { should have_selector('h1', text: 'Sign in')}
-   it { should have_title(full_title('Sign in'))}
+   let(:heading) {'Sign in'}
+   let(:page_title) {'Sign in'}
+   it_should_behave_like "All user pages"
  end
 end

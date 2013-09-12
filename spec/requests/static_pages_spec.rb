@@ -37,4 +37,18 @@ describe "Static Pages" do
     let(:page_title) { 'Contact' }
     it_should_behave_like "All static pages"
   end
+
+  it "Should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    expect(page).to have_title(full_title('About'))
+    click_link "Help"
+    expect(page).to have_title(full_title('Help'))
+    click_link "Contact"
+    expect(page).to have_title(full_title('Contact'))
+    click_link "Home"
+    expect(page).to have_title(full_title(''))
+    click_link "Sign up now!"
+    expect(page).to have_title(full_title('Sign up'))
+  end
 end
