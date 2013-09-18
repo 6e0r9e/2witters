@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe User do
   before do
     @user = User.new(name:"Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
@@ -21,7 +22,7 @@ describe User do
   end
 
   describe "When email is not present" do
-    before { @user.name = " " }
+    before { @user.email = " " }
     it { should_not be_valid }
   end
 
