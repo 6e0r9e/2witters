@@ -19,6 +19,16 @@ describe "User Pages" do
      it "Should not create a user" do
        expect {click_button submit}.not_to change(User, :count)
      end
+
+     describe "After invalid submission" do
+       before { click_button submit}
+       it { should have_content('error')}
+       it { should have_content('invalid')}
+       it { should have_content('minimum')}
+       it { should have_content('can\'t')}
+       it { should have_content('short')}
+       it_should_behave_like "All user pages"
+     end
    end
 
    describe "With valid infomation" do
