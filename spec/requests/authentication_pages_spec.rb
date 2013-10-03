@@ -17,9 +17,14 @@ describe "Authentication" do
     describe "Valid sign in credentials" do
       let(:user) {FactoryGirl.create(:user)}
       before do
-        fill_in
+        fill_in "Email", with: user.email.upcase
+        fill_in "Password" with: user.password
+        click_button "Sign in"
       end
-
+       it {should have_title(user.name)}
+       it {should have_link('Profile', href: user_path(user))}
+       it { should have_link('Sign out',    href: signout_path) }
+       it { should_not have_link('Sign in', href: signin_path) }
     end
   end
 end
