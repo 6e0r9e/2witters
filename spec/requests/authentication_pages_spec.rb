@@ -13,5 +13,7 @@ describe "Authentication" do
       it {should have_title('Sign in')}
       it {should have_selector('div.alert.alert-error', text: 'Invalid')}
     end
+
+    describe "Valid sign in credentials"
   end
 end
