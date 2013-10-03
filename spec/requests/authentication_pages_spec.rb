@@ -14,6 +14,12 @@ describe "Authentication" do
       it {should have_selector('div.alert.alert-error', text: 'Invalid')}
     end
 
-    describe "Valid sign in credentials"
+    describe "Valid sign in credentials" do
+      let(:user) {FactoryGirl.create(:user)}
+      before do
+        fill_in
+      end
+
+    end
   end
 end
