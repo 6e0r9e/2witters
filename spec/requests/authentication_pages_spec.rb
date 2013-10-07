@@ -40,6 +40,11 @@ describe "Authentication" do
         it {should have_title(user.name)}
         it {should have_selector('div.alert.alert-success', text: 'Welcome')}
       end
+
+      describe "followed by signout" do
+        before {click_button "Sign out"}
+        it {should have_link('Sign in')}
+      end
     end
   end
 end
