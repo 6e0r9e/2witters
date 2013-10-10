@@ -1,12 +1,13 @@
 Feature: Signing in
-  scenario: Unsuccessful signin
+
+  Scenario: Unsuccessful signin
     Given a user visits the signin page
-    When he submits invalid signin credentials
+    When he submits invalid signin information
     Then he should see an error message
 
-  scenario: Successful signin
+  Scenario: Successful signin
     Given a user visits the signin page
-     And  the user has an account
-    When  the user submits the valid signin credentials
-    Then  he should see his profile page
-     And  he should see a signout link
+    And the user has an account
+    When the user submits valid signin information
+    Then he should see his profile page
+    And he should see a signout link
