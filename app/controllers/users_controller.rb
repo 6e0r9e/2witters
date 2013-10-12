@@ -36,4 +36,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
+  #Before filter
+  def signed_in_user
+    redirect_to signin_url, notice: "Please sign in." unless sign_in?
+  end
 end
