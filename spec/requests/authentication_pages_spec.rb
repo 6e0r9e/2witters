@@ -40,7 +40,7 @@ describe 'Authentication' do
 
   describe "authorization" do
 
-    describe "for nin-signed-in users" do
+    describe "for non-signed-in users" do
       let(:user) {FactoryGirl.create(:user)}
 
       describe "in the user controller" do
