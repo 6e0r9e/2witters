@@ -40,6 +40,6 @@ class UsersController < ApplicationController
 
   #Before filter
   def signed_in_user
-    redirect_to signin_url, notice: "Please sign in." unless sign_in?
+    redirect_to signin_url, notice: "Please sign in." unless signed_in?
   end
 end
