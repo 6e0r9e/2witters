@@ -3,8 +3,6 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%=	 gravatar_for @user %>
-    <a  href="http://gravatar.com/emails">Change</a>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -22,5 +20,8 @@
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
+
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>
