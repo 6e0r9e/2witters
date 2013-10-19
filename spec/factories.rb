@@ -1,3 +1,4 @@
+#Comment congradulating myself in passing 100th commit threshold.
 FactoryGirl.define do
   factory :user do
     sequence(:name) {|n| "Person #{n}"}
