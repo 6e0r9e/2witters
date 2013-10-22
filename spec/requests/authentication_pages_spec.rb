@@ -112,7 +112,7 @@ describe 'Authentication' do
 
         describe "submitting to the create action" do
           before { post microposts_path}
-          specify {expect(reponse).to redirect_to(signin_path)}
+          specify {expect(response).to redirect_to(signin_path)}
         end
 
         describe "submitting to the destroy action" do
