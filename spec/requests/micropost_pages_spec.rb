@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "Micropost Pages" do
-  describe "GET /micropost_pages" do
     subject {page}
 
     let(:user) {FactoryGirl.create(:user)}
@@ -11,6 +10,7 @@ describe "Micropost Pages" do
       before {visit root_path}
 
       describe "with invalid information" do
+
         it "should not create a micropost" do
           expect {click_button "Post"}.not_to change(Micropost, :count)
         end
@@ -28,5 +28,4 @@ describe "Micropost Pages" do
         end
       end
     end
-  end
 end
