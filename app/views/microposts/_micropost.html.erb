@@ -5,5 +5,5 @@
   </span>
   <% if current_user?(micropost.user) %>
     <%= link_to "delete", micropost, method: :delete, data: {confirm: "You sure?"}, title: micropost.content %>
-   <%end%>
+  <%end%>
 </li>
